@@ -128,7 +128,7 @@ using namespace std;
 
 // lea una lista de frutas de cin y guardarla en el vector
 
-int main(){
+/*int main(){
   vector<string> listafrutas;
   string fruta;
   cout << "Ingrese la fruta: " << endl;
@@ -140,13 +140,13 @@ int main(){
     cout << listafrutas[i] << endl;
 
   return 0;
-}
+}*/
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // 4
 
-int main(){
+/*int main(){
 
   list<string> lista = {"casa1", "casa2", "casa3", "casa4"};
   vector<string> iden(lista.begin(), lista.end());
@@ -159,12 +159,12 @@ int main(){
 
 
   return 0;
-}
+}*/
 ////////////////////////////////////////////////////////////////////////////////7
 
-// 1 tamaño de una lista
+// 5 tamaño de una LISTA
 
-int main (){
+/*int main (){
   list<int> mylist;
   mylist.push_back(1);
   mylist.push_back(2);
@@ -187,11 +187,100 @@ int main (){
   cout << "primer elemento de mi lista: " << mylist.front() << endl;
   cout << "ultimo elemento de mi lista: " << mylist.back() << endl;
 
-
-
   return 0;
 
+}*/
+///////////////////////////////////////////////////////////////////////////////
+
+// 6
+
+//PREGUNTAR
+
+/*int main (){
+
+  list<int> mylist;
+
+  for(int i = 1; i < 11; i++)
+    mylist.push_back(pow(3,i));
+
+  while(!mylist.empty())
+
+    cout << mylist.front() << mylist.pop_front() << endl;
+
+  return 0;
+}*/
+///////////////////////////////////////////////////////////////////////////////
+
+// 7
+
+// lista que reciba los numeros reales los sume y los imprima
+
+/*int main(){
+
+  list<float> mylista;
+  list<float>:: iterator it;
+  float sum;
+  it = mylista.begin();
+
+  for(float i = 0; i < 30; i++)
+    mylista.push_back(i/7);
+
+  for(it = mylista.begin(); it != mylista.end(); it++)
+    sum += *it;
+
+  cout << " SUMA 1: " << sum << endl;
+
+  for(it = mylista.begin(); it != mylista.end(); it++)
+    cout << ' ' << *it << endl;
+
+  while(sum < 62)
+    sum += *it++;
+
+  cout << "SUMA 2: " << sum << endl;
+  return 0;
+}*/
+/////////////////////////////////////////////////////////////////////////////////
+
+// 8
+
+// intercambiar el primer y el ultimo numero
+
+/*list<int> reorg (list<int> mylist){
+
+  list<int>:: iterator it;
+
+  int primer = mylist.front();
+  int segundo = mylist.back();
+
+  mylist.pop_back();
+  mylist.pop_front();
+
+  mylist.push_front(segundo);
+  mylist.push_back(primer);
+
+  for(it = mylist.begin(); it != mylist.end(); it++)
+    cout << "LISTA REORGANIZADA: " << *it << endl;
+
+  return mylist;
+
 }
+
+int main (){
+
+  list<int> myint;
+  list<int>:: iterator it;
+
+  for(int i = 0; i < 41; i++)
+    myint.push_back(i);
+
+    for(it = myint.begin(); it != myint.end(); it++)
+      cout << "LISTA NORMAL: " << *it << endl;
+
+  reorg(myint);
+
+  return 0;
+}*/
+
 
 
 
