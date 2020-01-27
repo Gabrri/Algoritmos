@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <list>
+#include <satck>
+#include <math.h>
 using namespace std;
 
 // 1
@@ -280,6 +283,71 @@ int main (){
 
   return 0;
 }*/
+////////////////////////////////////////////////////////////////////////////////
+
+// 9 STACK
+
+/*int main (){
+  stack<int> mystack;
+
+  for(int i =0; i < 11; i++)
+    mystack.push(i);
+
+  cout << "Tamaño de la pila: " << mystack.size() << endl;
+
+  if(mystack.empty())
+    cout << "La pila esta vacia" << endl;
+    else cout << "La pila no esta vacia" << endl;
+
+  cout << "El elemento mas arriba de la pila es: " << mystack.top() << endl;
+
+  mystack.pop();
+
+  cout << "Eliminando el elemento mas arriba de la pila: " << mystack.top() << endl;
+
+  mystack.push(88);
+
+  cout << "Agregando un elemento a la pila: " << mystack.top() << endl;
+
+  return 0;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////
+// 10
+//PREGUNTAR
+
+/*int main (){
+  stack<int> mystack;
+
+  for(int i = 0; i < 11; i++)
+    mystack.push(pow(3,i));
+
+  cout << mystack.top() << endl;
+
+  while(! mystack.empty())
+
+    cout << mystack.top() << ' ';
+    mystack.pop();
+
+  return 0;
+}*/
+//////////////////////////////////////////////////////////////////////////////////
+// 11
+
+int main (){
+  stack<char> mystack;
+  char a;
+
+  for(a = 'a'; a <= 'z'; a++)
+    mystack.push(a);
+
+while(!mystack.empty())
+  for(int i = 0; i < mystack.size(); i ++)
+    mystack.pop();
+    cout << mystack.top() << ' ';
+
+  return 0;
+}
 
 
 
