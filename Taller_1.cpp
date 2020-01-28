@@ -163,7 +163,9 @@ using namespace std;
 
   return 0;
 }*/
-////////////////////////////////////////////////////////////////////////////////7
+////////////////////////////////////////////////////////////////////////////////
+
+//LISTA
 
 // 5 tamaño de una LISTA
 
@@ -314,7 +316,6 @@ int main (){
 
 /////////////////////////////////////////////////////////////////////////////////
 // 10
-//PREGUNTAR
 
 /*int main (){
   stack<int> mystack;
@@ -324,30 +325,124 @@ int main (){
 
   cout << mystack.top() << endl;
 
-  while(! mystack.empty())
+  cout << "Eliminando elementos de la pila..." << endl;
 
-    cout << mystack.top() << ' ';
+//eliminar elementos e imprimir
+
+  while(! mystack.empty())
+  {
+    cout << mystack.top() << ' ' << endl;
     mystack.pop();
+  }
 
   return 0;
 }*/
 //////////////////////////////////////////////////////////////////////////////////
+
 // 11
 
-int main (){
+// recibe un array de caracteres al derecho y con stack los imnprime al reves
+
+/*int main (){
+
   stack<char> mystack;
-  char a;
+  array<char,4> Palabra = {'h','o','l','a'};
 
-  for(a = 'a'; a <= 'z'; a++)
-    mystack.push(a);
+  for(unsigned int i = 0; i < Palabra.size();i++)
+    mystack.push(Palabra[i]);
 
-while(!mystack.empty())
-  for(int i = 0; i < mystack.size(); i ++)
+  for(unsigned int i =0; i < Palabra.size();i++)
+    cout << Palabra[i] << ' ';
+
+  cout << endl;
+
+  while(! mystack.empty())
+  {
+    cout << mystack.top() << ' ' ;
     mystack.pop();
-    cout << mystack.top() << ' ';
+  }
+
+  cout << endl;
 
   return 0;
-}
+}*/
+//////////////////////////////////////////////////////////////////////////////////
+
+// 12
+//PREGUNTAR
+
+////////////////////////////////////////////////////////////////////////////////
+
+//QUEUE
+
+// 13
+
+// queue solo agregar e insertar en un Eliminando
+//deque insertar y agregar en los dos lados, al comienzo y al final
+//determinar input y output del problema
+
+/*int main (){
+  queue<int> myqueue;
+
+  for(int i = 0; i < 21; i++)
+    myqueue.push(i);
+// tamaño de la cola
+  cout << "El tamaño de la cola es: " << myqueue.size() << endl;;
+
+//determinar si esta vacia
+  if(myqueue.empty())
+    cout << " la cola esta vacia" << endl;
+    else cout << "la lista no esta vacia" << endl;
+
+//acceder al elemento al frente de la cola
+
+  cout << myqueue.front() << endl;
+
+//eliminar el elemento al frente de la cola
+
+  myqueue.pop();
+  cout << myqueue.front() << endl;
+
+// agregar un elemento al final de la cola
+// se añade al final
+
+  myqueue.push(99);
+  while(!myqueue.empty())
+  {
+    cout << myqueue.front() << endl;
+    myqueue.pop();
+  }
+  
+  return 0;
+}*/
+/////////////////////////////////////////////////////////////////////////////////
+
+// 14
+
+/*int main (){
+
+  queue<int> myqueue;
+
+  for(int i = 0; i < 11; i++)
+    myqueue.push(pow(3,i));
+
+  cout << "objeto el comienzo de la cola: " << myqueue.front() << endl;
+
+  while(!myqueue.empty())
+  {
+    cout << myqueue.front() << endl;
+    myqueue.pop();
+  }
+
+  return 0;
+}*/
+
+
+
+
+
+
+
 
 
 
