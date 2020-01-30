@@ -2,6 +2,7 @@
 #include <vector>
 #include <list>
 #include <satck>
+#include <queue>
 #include <math.h>
 using namespace std;
 
