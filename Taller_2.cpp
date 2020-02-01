@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <satck>
-#include <maps>
+#include <stack>
+#include <map>
 #include <queue>
 #include <set>
+#include <string>
+#include <fstream>
 #include <math.h>
 using namespace std;
 
@@ -74,21 +76,22 @@ using namespace std;
 
 // 3
 // funcion iniciales y retorna EXTENSION
-short fun1(map<string,short> mmp, string k){
+string fun1(map<string,string> mmp, string k){
 
-  map<string,short>::iterator it;
+  map<string,string>::iterator it;
+  string m ="jo";
 
-  for(it = mmp.begin(), it != mmp.end(); it++)
-  {
-      if(it -> first == k)
-        cout << mmp[k] << endl;
+  for(it = mmp.begin(), it != mmp.end(); ++it){
+        it = mmp.find(k);
+        cout << it -> second << endl;
   }
 
-  return mmp[k];
+
+  return m;
 }
 
 //funcion extension y retorna INICIALES
-string fun2(map<short,string> mmp2, short l){
+/*string fun2(map<short,string> mmp2, short l){
 
   map<short,string>::iterator it;
 
@@ -99,44 +102,49 @@ string fun2(map<short,string> mmp2, short l){
   }
 
   return mmp2[l];
-}
+}*/
 
 
 int main()
 {
-//word by word
-  ifstream ifs ("Prof_ext.txt");
-  string line = "";
-  if(ifs.good()){
-    while(!ifs.eof()){
-      ifs >> line;
-      cout << line << endl;
-    }
-  }
-  ifs.close();
+  map<string,string> mymap;
+  map<string,string>::iterator it;
+
+  it = mymap.begin();
+
 // line by line
-  ifs.open("Prof_ext.txt");
-  if(ifs.good()){
-    while(!ifs.eof()){
-      getline(ifs, line);
-      cout << line << endl;
-    }
+string line ;
+string one;
+string two;
+ifstream myfile ("Prof_ext.txt");
+
+if (myfile.is_open())
+{
+  while ( getline (myfile,line) )
+  {
+    //cout << line << '\n';
+    one = line.substr(0,4);
+    two = line.substr(5,line.length());
+    mymap.insert(it,pair<string,string>(one,two));
   }
-  ifs.close();
+  myfile.close();
+}
+else cout << "Unable to open file";
 
+for(it = mymap.begin(); it != mymap.end(); it++){
+  cout << it ->first << ' ' << it ->second << endl;
 
+}
   string k;
   cout << " INGRESE INICIALES DEL PROFESOR: " << endl;
   cin >> k;
 
-  short l;
-  cout << "INGRESE NUMERO DE LA EXTENSION: " << endl;
-  cin >> l;
+  // short l;
+  // cout << "INGRESE NUMERO DE LA EXTENSION: " << endl;
+  // cin >> l;
 
-  fun1();
-  fun2();
+  fun1(mymap,k);
+  //fun2();
 
   return 0;
 }
-
-
