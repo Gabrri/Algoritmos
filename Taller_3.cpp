@@ -3,6 +3,7 @@
 using namespace std;
 
 // 1
+// PREGUNTAR
 // int main (){
 //   vector<int> mylist;
 //   vector<int>::iterator it;
@@ -30,25 +31,77 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
 
 // 2
+//PREGUNTAR Y VERIFICAR
 //Encontrar e iprimir el elemento mas chico
 
-int main(){
-  vector<string> myvector;
-  string elem;
+// int main(){
+//   vector<string> myvector;
+//   vector<string> myvector2;
+//   string elem;
+//
+//   myvector.push_back("5");
+//   myvector.push_back("4");
+//   myvector.push_back("3");
+//   myvector.push_back("1");
+//   myvector.push_back("2");
+//
+//   for(unsigned int i = 0; i <= myvector.size(); i++){
+//     if(myvector[i] < myvector[i+1]){
+//       elem = myvector[i];
+//     }
+//   }
+//
+//   cout << elem << endl;
+//
+//
+//   return 0;
+// }
+////////////////////////////////////////////////////////////////////////////////
 
-  myvector.push_back("hola");
-  myvector.push_back("ola");
-  myvector.push_back("lola");
-  myvector.push_back("bola");
+// 3
+// vector de enteros que aumenta y disminuye valor maximo en el vector
+// int findMaximum(vector<int>& arr);
+//
+// int main (){
+//   vector<int> myvector;
+//   int elem;
+//
+//     myvector.push_back(1);
+//     myvector.push_back(2);
+//     myvector.push_back(3);
+//     myvector.push_back(4);
+//     myvector.push_back(5);
+//     myvector.push_back(4);
+//     myvector.push_back(3);
+//     myvector.push_back(2);
+//     myvector.push_back(1);
+//
+//     for(unsigned int i = 0; i <= myvector.size(); i++){
+//          if(myvector[i] < myvector[i+1]){
+//           elem = myvector[i+1];
+//         }
+//       }
+//     cout << elem << endl;
+//
+//
+//   return 0;
+// }
+////////////////////////////////////////////////////////////////////////////////
 
-  for(unsigned int i = 0; i <= myvector.size(); i++){
-    if(myvector[i] < myvector[i+1]){
-      elem = myvector[i];
-    }
-  }
+// 4
+// arreglo enteros orden distinto, y distinto signo en orden ascendente. Encontrar
+//indice i tal que a[i]=i si existe
 
-  cout <<elem << " el mas peque" << endl;
-
-
-  return 0;
-}
+// int main (){
+//
+//   int arreglo[] = {-3,-2,-1,0,1,5,11,7};
+//
+//   for(unsigned int i = 0; i <= 7;i++){
+//     if(arreglo[i] == i){
+//       cout << "El elemento; " << arreglo[i] << " coincide con su indice " << i << endl;
+//     }
+//   }
+//
+//
+//   return 0;
+// }
