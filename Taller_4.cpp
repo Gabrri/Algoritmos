@@ -1,5 +1,4 @@
 
-
 #include <iostream>
 #include <vector>
 #include "functions.hpp"
@@ -7,6 +6,8 @@ using namespace std;
 
 // 1 Bidirectional bubble sort 
 
+
+// bubble sort normal 
 void  bubble_sort(vector<int>& v){
 	for(unsigned int i = 0; i < v.size() ;i++){
 		for(unsigned int j =0; j < v.size(); j++){
@@ -15,6 +16,12 @@ void  bubble_sort(vector<int>& v){
 		}
 	}
 }
+
+// ordenar en dos direcciones Bidirectinal bubble sort 
+// elemento mas chico de primeras elemento mas grande de ultimas
+// 2 elemento chas chico de segundas, elemento menos grande de penultimas 
+// abajo hacia arriba, pasa alternativamente de abajo hacia arriba y luego de arriba hacia abajo
+// 
 
 void bidirectional_bs(vector <int>& vec){
 }
