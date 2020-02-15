@@ -311,73 +311,83 @@ using namespace std;
 
 // 8
 // union
-// set<int> aunion(vector<int> & a, vector<int> & b){
-//   set<int> union1;
-//   set<int>::iterator it;
-//
-//   for(int i = 0; i < 11; i++){
-//     union1.insert(a[i]);
-//     union1.insert(b[i]);
-//   }
-//   cout << "LA UNION" << endl;
-//   for(it = union1.begin(); it != union1.end();it++)
-//     cout << *it << endl;
-//
-//   return union1;
-// }
-// // interseccion
-// set<int> intsect(vector<int> & a, vector<int> & b){
-//   set<int> inter;
-//   set<int>:: iterator it;
-//
-//   for(int i = 0; i < 11; i++){
-//     for(int j = 0; j < 11; j++){
-//       if(a[i]==b[j])
-//         inter.insert(a[i]);
-//     }
-//   }
-//   cout << "LA INTERSECCION" << endl;
-//   for(it = inter.begin(); it != inter.end();it++)
-//     cout << *it << endl;
-//   return inter;
-// }
-// // PREGUNTAR
-// // diferencia
-// set<int> difference(vector<int> & a, vector<int> & b){
-//   set<int>diff;
-//   set<int>:: iterator it;
-//
-//   for(int i = 0; i < 11; i++){
-//     for(int j = 0; j < 11; j++){
-//       if(a[i]!=b[j]){
-//         diff.insert(a[i]);
-//       }
-//     }
-//   }
-//   cout << "LA DIFERENCIA" << endl;
-//   for(it = diff.begin(); it != diff.end();it++)
-//     cout << *it << endl;
-//
-//   return diff;
-// }
-//
-// // funcion para correr
-//
-// int main (){
-//
-//   vector<int> prim;
-//   vector<int> seg;
-//   set<int> m;
-//
-//   for(unsigned int i = 0; i < 11; i++)
-//     prim.push_back(2*i);
-//
-//   for(unsigned int i = 0; i < 11; i++)
-//     seg.push_back(4*i);
-//
-//   aunion(prim,seg);
-//   intsect(prim,seg);
-//   difference(prim,seg);
-//
-//   return 0;
-// }
+set<int> aunion(vector<int> & a, vector<int> & b){
+  set<int> union1;
+  set<int>::iterator it;
+
+  for(int i = 0; i < 11; i++){
+    union1.insert(a[i]);
+    union1.insert(b[i]);
+  }
+  cout << "LA UNION" << endl;
+  for(it = union1.begin(); it != union1.end();it++)
+    cout << *it << endl;
+
+  return union1;
+}
+// interseccion
+
+set<int> intsect(vector<int> & a, vector<int> & b){
+  set<int> inter;
+  set<int>:: iterator it;
+
+  int z = a.size();
+  int o = b.size();
+
+  for(int i = 0; i <= z; i++){
+    int m = a[i];
+    for(int j = 0; j <= o; j++){
+      if(m==b[j])
+        inter.insert(m);
+    }
+  }
+  cout << "LA INTERSECCION" << endl;
+  for(it = inter.begin(); it != inter.end();it++)
+    cout << *it << endl;
+  return inter;
+}
+
+// diferencia
+
+set<int> difference(vector<int> & a, vector<int> & b){
+  set<int>diff;
+  set<int>:: iterator it;
+
+  int z = a.size();
+  int o = b.size();
+
+
+  for(int i = 0; i <= z; i++){
+    int m = a[i];
+    for(int j = 0; j <= o; j++){
+      if(b[j]!=m){
+        diff.insert(b[j]);
+      }
+    }
+  }
+  cout << "LA DIFERENCIA" << endl;
+  for(it = diff.begin(); it != diff.end();it++)
+    cout << *it << endl;
+
+  return diff;
+}
+
+// funcion para correr
+
+int main (){
+
+  vector<int> prim;
+  vector<int> seg;
+
+  for(unsigned int i = 0; i < 6; i++)
+    prim.push_back(2*i);
+
+  for(unsigned int i = 0; i < 11; i++)
+    seg.push_back(4*i);
+
+  aunion(prim,seg);
+  intsect(prim,seg);
+  difference(prim,seg);
+
+  return 0;
+}
