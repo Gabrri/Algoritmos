@@ -1,8 +1,9 @@
 #include <vector>
 #include <iostream>
 using namespace std;
+
+////////////////////////////////////////////////////////////////////////////////
 // 1
-// PREGUNTAR
 int main (){
   vector<int> mylist;
 
@@ -14,17 +15,14 @@ int main (){
   mylist.push_back(6);
   mylist.push_back(7);
 
-  for(unsigned int i =0; i < mylist.size(); i++){
-    int k = mylist[i];
-    if(k != i){
+  for(int i =0; i < int(mylist.size()); i++){
+    if(mylist[i] != i){
       cout << "El elemento faltante de mi arreglo es: " << i << endl;
+      break;
     }
   }
-
   return 0;
 }
-////////////////////////////////////////////////////////////////////////////////
-
 // 2
 //PREGUNTAR Y VERIFICAR
 //Encontrar e iprimir el elemento mas chico
