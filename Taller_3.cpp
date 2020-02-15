@@ -1,33 +1,28 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-
 // 1
 // PREGUNTAR
-// int main (){
-//   vector<int> mylist;
-//   vector<int>::iterator it;
-//
-//   mylist.push_back(1);
-//   mylist.push_back(2);
-//   mylist.push_back(3);
-//   mylist.push_back(5);
-//   mylist.push_back(6);
-//   mylist.push_back(7);
-//
-//   for(unsigned int i = 1; i <= mylist.size() ;i++){
-//     int m = mylist[i+1];
-//     if(m != mylist[i+1]){
-//       it = mylist.begin();
-//       mylist.insert(it+i-1,i+1);
-//     }
-//   }
-//
-//   for(unsigned int i = 1 ;i <= mylist.size();i++)
-//     cout << mylist[i] << endl;
-//
-//   return 0;
-// }
+int main (){
+  vector<int> mylist;
+
+  mylist.push_back(0);
+  mylist.push_back(1);
+  mylist.push_back(2);
+  mylist.push_back(3);
+  mylist.push_back(5);
+  mylist.push_back(6);
+  mylist.push_back(7);
+
+  for(unsigned int i =0; i < mylist.size(); i++){
+    int k = mylist[i];
+    if(k != i){
+      cout << "El elemento faltante de mi arreglo es: " << i << endl;
+    }
+  }
+
+  return 0;
+}
 ////////////////////////////////////////////////////////////////////////////////
 
 // 2
