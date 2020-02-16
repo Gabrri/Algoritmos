@@ -17,60 +17,60 @@ using namespace std;
 // MAP
 // 1
 
-/*int main(){
-  map<char,int> mymap;
-  map<char,int>::iterator it;
-
-  mymap['a']=22;
-  mymap['b']=44;
-  mymap['c']=66;
-  mymap['d']=88;
-
-  it = mymap.find('b');
-  mymap.erase(it);
-
-  cout << "tamaño del mapa: " << mymap.size() << endl;
-
-  cout << "mymap [a] is: " << mymap['a'] << endl;
-  cout << "mymap [b] is: " << mymap['b'] << endl;
-  cout << "mymap [c] is: " << mymap['c'] << endl;
-  cout << "mymap [d] is: " << mymap['d'] << endl;
-
-  return 0;
-}*/
+// int main(){
+//   map<char,int> mymap;
+//   map<char,int>::iterator it;
+//
+//   mymap['a']=22;
+//   mymap['b']=44;
+//   mymap['c']=66;
+//   mymap['d']=88;
+//
+//   it = mymap.find('b');
+//   mymap.erase(it);
+//
+//   cout << "tamaño del mapa: " << mymap.size() << endl;
+//
+//   cout << "mymap [a] is: " << mymap['a'] << endl;
+//   cout << "mymap [b] is: " << mymap['b'] << endl;
+//   cout << "mymap [c] is: " << mymap['c'] << endl;
+//   cout << "mymap [d] is: " << mymap['d'] << endl;
+//
+//   return 0;
+// }
 
 /////////////////////////////////////////////////////////////////////////////////
 
 // 2
 
-/*int main (){
-  map<string,string> mymap;
-  map<string,string>::iterator it;
-
-  mymap["lulo"]="fruta acida de color cafe con interior verde";
-  mymap["mora"]="fruta acida de color moprado que destiñe color";
-  mymap["mango"]="fruta dulce de color amarillo";
-  mymap["sandia"]="fruta aguada de color verde con interior rojo";
-
-  cout << "mymap lulo is: " << mymap["lulo"] << endl;
-  cout << "mymap mora is: " << mymap["mora"] << endl;
-  cout << "mymap mango is: " << mymap["mango"] << endl;
-  cout << "mymap sandia is: " << mymap["sandia"] << endl;
-
-  cout << "size of my map: " << mymap.size() << endl;
-
-  //it= mymap.find("sandia");
-  //mymap.erase(it);
-
-  cout << "new size of my map: " << mymap.size() << endl;
-
-  //IMPRIMIR MAPAS
-
-  for(it = mymap.begin(); it != mymap.end(); it++)
-    cout << it ->first << ' ' << it ->second << endl;
-
-  return 0;
-}*/
+// int main (){
+//   map<string,string> mymap;
+//   map<string,string>::iterator it;
+//
+//   mymap["lulo"]="fruta acida de color cafe con interior verde";
+//   mymap["mora"]="fruta acida de color moprado que destiñe color";
+//   mymap["mango"]="fruta dulce de color amarillo";
+//   mymap["sandia"]="fruta aguada de color verde con interior rojo";
+//
+//   cout << "mymap lulo is: " << mymap["lulo"] << endl;
+//   cout << "mymap mora is: " << mymap["mora"] << endl;
+//   cout << "mymap mango is: " << mymap["mango"] << endl;
+//   cout << "mymap sandia is: " << mymap["sandia"] << endl;
+//
+//   cout << "size of my map: " << mymap.size() << endl;
+//
+//   //it= mymap.find("sandia");
+//   //mymap.erase(it);
+//
+//   cout << "new size of my map: " << mymap.size() << endl;
+//
+//   //IMPRIMIR MAPAS
+//
+//   for(it = mymap.begin(); it != mymap.end(); it++)
+//     cout << it ->first << ' ' << it ->second << endl;
+//
+//   return 0;
+// }
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -232,7 +232,8 @@ using namespace std;
 //     cout << "mi set no esta vacio" << endl;
 //   }else cout << " mi set esta vacio " << endl;
 //
-//   myset.find(44);
+//   it = myset.find(44);
+//   cout << "EL ELEMENTO HALLADO FUE: " << *it << endl;
 //
 //   cout << "myset contains:";
 //
@@ -271,36 +272,32 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
 
 // 7
-
-// bool subset(set<int> & a, set<int> & b){
-//   set<int>::iterator it;
-//   set<int>::iterator ir;
-//   set<int> sub;
+// int subset(set<int>&a, set<int>&b){
+//   set<int> mysubset;
+//   set<int>:: iterator it, it2;
 //
-//   for(it = b.begin();it != b.end(); it++){
-//     for(ir = a.begin();ir != a.end(); ir++){
-//       if(*it == *ir){
-//         sub.insert(*it);
-//         sub.insert(*ir);
+//   for(it = b.begin(); it != b.end(); it++){
+//     int m = *it;
+//     for(it2 = a.begin(); it2 != a.end(); it2++){
+//       if(m == *it2){
+//         mysubset.insert(m);
 //       }
 //     }
 //   }
-//   for (it=sub.begin(); it!=sub.end(); ++it)
-//        cout << ' ' << *it;
-//        cout << '\n';
+//   for(it = mysubset.begin(); it != mysubset.end(); it++)
+//     cout << *it << endl;
 //
-//   return true;
+//   return 1;
 // }
-//
 // int main (){
 //   set<int> con1;
 //   set<int> con2;
 //
-//   for(unsigned int i = 0; i < 22; i++)
-//     con1.insert(i);
+//   for(unsigned int i = 0; i < 6; i++)
+//     con1.insert(i*2);
 //
-//   for(unsigned int i = 0; i < 11; i++)
-//     con2.insert(i);
+//   for(unsigned int i = 0; i < 6; i++)
+//     con2.insert(i*4);
 //
 //   subset(con1,con2);
 //
@@ -311,83 +308,83 @@ using namespace std;
 
 // 8
 // union
-set<int> aunion(vector<int> & a, vector<int> & b){
-  set<int> union1;
-  set<int>::iterator it;
-
-  for(int i = 0; i < 11; i++){
-    union1.insert(a[i]);
-    union1.insert(b[i]);
-  }
-  cout << "LA UNION" << endl;
-  for(it = union1.begin(); it != union1.end();it++)
-    cout << *it << endl;
-
-  return union1;
-}
-// interseccion
-
-set<int> intsect(vector<int> & a, vector<int> & b){
-  set<int> inter;
-  set<int>:: iterator it;
-
-  int z = a.size();
-  int o = b.size();
-
-  for(int i = 0; i <= z; i++){
-    int m = a[i];
-    for(int j = 0; j <= o; j++){
-      if(m==b[j])
-        inter.insert(m);
-    }
-  }
-  cout << "LA INTERSECCION" << endl;
-  for(it = inter.begin(); it != inter.end();it++)
-    cout << *it << endl;
-  return inter;
-}
-
-// diferencia
-
-set<int> difference(vector<int> & a, vector<int> & b){
-  set<int>diff;
-  set<int>:: iterator it;
-
-  int z = a.size();
-  int o = b.size();
-
-
-  for(int i = 0; i <= z; i++){
-    int m = a[i];
-    for(int j = 0; j <= o; j++){
-      if(b[j]!=m){
-        diff.insert(b[j]);
-      }
-    }
-  }
-  cout << "LA DIFERENCIA" << endl;
-  for(it = diff.begin(); it != diff.end();it++)
-    cout << *it << endl;
-
-  return diff;
-}
-
-// funcion para correr
-
-int main (){
-
-  vector<int> prim;
-  vector<int> seg;
-
-  for(unsigned int i = 0; i < 6; i++)
-    prim.push_back(2*i);
-
-  for(unsigned int i = 0; i < 11; i++)
-    seg.push_back(4*i);
-
-  aunion(prim,seg);
-  intsect(prim,seg);
-  difference(prim,seg);
-
-  return 0;
-}
+// set<int> aunion(vector<int> & a, vector<int> & b){
+//   set<int> union1;
+//   set<int>::iterator it;
+//
+//   for(int i = 0; i < 11; i++){
+//     union1.insert(a[i]);
+//     union1.insert(b[i]);
+//   }
+//   cout << "LA UNION" << endl;
+//   for(it = union1.begin(); it != union1.end();it++)
+//     cout << *it << endl;
+//
+//   return union1;
+// }
+// // interseccion
+//
+// set<int> intsect(vector<int> & a, vector<int> & b){
+//   set<int> inter;
+//   set<int>:: iterator it;
+//
+//   int z = a.size();
+//   int o = b.size();
+//
+//   for(int i = 0; i <= z; i++){
+//     int m = a[i];
+//     for(int j = 0; j <= o; j++){
+//       if(m==b[j])
+//         inter.insert(m);
+//     }
+//   }
+//   cout << "LA INTERSECCION" << endl;
+//   for(it = inter.begin(); it != inter.end();it++)
+//     cout << *it << endl;
+//   return inter;
+// }
+//
+// // diferencia
+//
+// set<int> difference(vector<int> & a, vector<int> & b){
+//   set<int>diff;
+//   set<int>:: iterator it;
+//
+//   int z = a.size();
+//   int o = b.size();
+//
+//
+//   for(int i = 0; i <= z; i++){
+//     int m = a[i];
+//     for(int j = 0; j <= o; j++){
+//       if(b[j]!=m){
+//         diff.insert(b[j]);
+//       }
+//     }
+//   }
+//   cout << "LA DIFERENCIA" << endl;
+//   for(it = diff.begin(); it != diff.end();it++)
+//     cout << *it << endl;
+//
+//   return diff;
+// }
+//
+// // funcion para correr
+//
+// int main (){
+//
+//   vector<int> prim;
+//   vector<int> seg;
+//
+//   for(unsigned int i = 0; i < 6; i++)
+//     prim.push_back(2*i);
+//
+//   for(unsigned int i = 0; i < 11; i++)
+//     seg.push_back(4*i);
+//
+//   aunion(prim,seg);
+//   intsect(prim,seg);
+//   difference(prim,seg);
+//
+//   return 0;
+// }
