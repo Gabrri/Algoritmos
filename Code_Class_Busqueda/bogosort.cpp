@@ -21,25 +21,24 @@ void shuffle(vector<int>& v, minstd_rand0& rng){
   swap(num1, num2, v);
 }
 
-void bogosort(vector<int>& v, minstd_rand0& rng){
-  .
-  .
-  .
-}
-
-
 int main(){
   int times = 100;
   int size = 12;
   vector<int> vec;
 
+
   //random number generator
   unsigned seed = 123;
   minstd_rand0 rng(seed);
+  generate_vector(int size, vector<int>& vec, minstd_rand0& rng);
 
-  .
-  .
-  .
-  
+  bogosort(vec,rng);
+
+  void bogosort(vector<int>& v, minstd_rand0& rng){
+    while(!is_sorted(v)){
+      shuffle(v,rng);
+    }
+  }
+
   return 0;
 }
