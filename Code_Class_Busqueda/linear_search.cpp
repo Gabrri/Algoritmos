@@ -3,7 +3,6 @@
 #include "functions.hpp"
 using namespace std;
 
-
 int linear_search(int X, const vector<int>& v){
   for(unsigned int i = 0; i < v.size(); ++i){
     if(v[i] == X)
@@ -12,44 +11,40 @@ int linear_search(int X, const vector<int>& v){
   return -1;
 }
 
+// generar un vector aleatorio
+
+void generate_vector(int size, vector<int>& v, minstd_rand0& rng){
+  v.clear();
+  const int max_num = size;
+  //Generation of a sequence of (pseudo)random numbers
+  rng();
+  for(int i = 0; i < size; ++i){
+    int num = int(max_num * ( double(rng()) / rng.max() ));
+    v.push_back(num);
+  }
+}
+
+void print_vector(vector<int>& v){
+  for(int i = 0; i < v.size(); ++i)
+    cout << v[i] << " ";
+  cout << "\n";
+}
+
 int main(){
-  // int times = 100;
-  // //int size = 1e6;
-  // int X = 1;//size-1;
-  // vector<int> vec;
-  //
-  // //random number generator
-  // unsigned seed = 123;
-  // minstd_rand0 rng(seed);
-  //
-  // double tot_time = 0;
-  // for(int n = 0; n < times; ++n){
-  //   //Generate the random vector
-  //
-  //   //get initial time
-  //   double tstart = gettime();
+  unsigned seed = 123;
+  minstd_rand0 rng(seed);
+  vector<int> vec;
+  int X = 76;
 
-    //Search for X in vec
-    vector<int> vec;
+  generate_vector(200, vec, rng);
+  print_vector(vec);
 
-    for(int i =1; i < 122; i++)
-      vec.push_back(i);
+  linear_search(X,vec);
+  print_vector(vec);
 
-    int X = 47;
 
-    int pos = linear_search(X, vec);
 
-    //final time
-    // double tstop = gettime();
-    // tot_time += tstop-tstart;
 
-    if(pos < 0)
-      cout << X << " is not contained in the vector\n";
-    else
-      cout << X << " was found at position " << pos << "\n";
-
-  // }
-  // cout << "Time taken = " << tot_time / times << endl;
 
   return 0;
 }
