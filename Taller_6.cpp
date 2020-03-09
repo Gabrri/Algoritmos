@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <math.h>
+#include <set>
 using namespace std;
 
 // 1
@@ -69,3 +71,59 @@ using namespace std;
 ///////////////////////////////////////////////////////////////////
 
 // 4
+
+// float Combinatoria(int n, int k){
+//   if(n<k){
+//     return 0;
+//   }else if(n==k){
+//     return 1;
+//   }else if(k==n-1){
+//     return n;
+//   }else if(k == 0){
+//     return 1;
+//   }else{
+//     return (Combinatoria(n-1,k-1)+Combinatoria(n-1,k));
+//   }
+// }
+//
+// int main(){
+//   float m = Combinatoria(50,6);
+//   cout << m << endl;
+//   return 0;
+//
+// }
+
+//////////////////////////////////////////////////////////////////////
+
+// 5
+
+set<string> permutations(const string & pal){
+
+  set<string> final;
+  set<string>:: iterator it;
+
+  if(pal.size()==0){
+    final.insert(" ");
+    return final;
+  }else if( pal.size()==1){
+    final.insert(pal);
+    return final;
+  }else{
+    
+    string tmp = pal.substr(0, pal.size() - 1);
+    set<string> s_tmp = permutations(tmp);
+    return final;
+  }
+
+}
+
+int main (){
+
+  set<string> myset = permutations("mencion");
+  set<string>:: iterator it;
+
+  for(it = myset.begin(); it != myset.end(); it++){
+    cout << ' ' << *it << endl;
+  }
+  return 0;
+}
